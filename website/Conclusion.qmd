@@ -1,0 +1,20 @@
+---
+title: "Conclusion"
+format:
+  html:
+    page-layout: full
+    code-fold: show
+    code-copy: true
+    code-tools: true
+    code-overflow: wrap
+---
+
+This research has yielded two notable findings regarding the COVID-19 pandemic:
+
+- Firstly, a significant variation in COVID-19 infection rates across countries has been observed, with a discernible positive correlation between these rates and the population density of a country. In essence, countries with higher population densities tend to exhibit increased COVID-19 infection rates. While this correlation does not establish causality, it underscores the potential mechanisms of virus transmission, emphasizing that measures such as reducing mass gatherings and maintaining social distancing could be effective in curtailing the spread of the virus.
+
+- Secondly, the deployment of vaccines appears to have influenced the rise in COVID-19 cases, though the connection to mortality rates remains ambiguous. Again, while causality cannot be inferred from this correlation, the association suggests that vaccines play a role in mitigating the spread of COVID-19, providing humanity with a potent tool in combating the pandemic.
+
+This investigation serves as an initial inquiry into the factors influencing COVID-19's impact. The constraints of the data and the analytical methods used precluded a more detailed examination, such as employing time-series analysis to assess the specific effects of vaccination on the pandemic's trajectory.\
+
+COVID-19 has wrought considerable havoc, disrupting our daily lives and leading to the loss of many. However, I am confident that through collective human effort, we will ultimately prevail over this pandemic and emerge better prepared for any future global health crises.

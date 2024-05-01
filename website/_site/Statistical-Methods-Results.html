@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>COVID-19 Affecting Factors and Hypothetical Analysis - Yifan Hu - Statistical Methods and Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Statistical-Methods-Results.html">Statistical Methods and Results</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">COVID-19 Affecting Factors and Hypothetical Analysis - Yifan Hu</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://github.com/hyf112/DSAN-5100-Project.git">
+            Source Code
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Data-Sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Sources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Exploratory-Data-Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exploratory Data Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Statistical-Methods-Results.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Statistical Methods and Results</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conclusion</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#population-density-and-infection-rates-of-covid-19" id="toc-population-density-and-infection-rates-of-covid-19" class="nav-link" data-scroll-target="#population-density-and-infection-rates-of-covid-19">Population Density and Infection Rates of COVID-19</a>
+  <ul class="collapse">
+  <li><a href="#distribution" id="toc-distribution" class="nav-link" data-scroll-target="#distribution">Distribution</a></li>
+  <li><a href="#spearmans-rank-correlation-coefficient-test-and-result" id="toc-spearmans-rank-correlation-coefficient-test-and-result" class="nav-link" data-scroll-target="#spearmans-rank-correlation-coefficient-test-and-result">Spearman’s Rank Correlation Coefficient Test and Result</a></li>
+  </ul></li>
+  <li><a href="#vaccination-and-the-infectiondeath-rates-of-covid-19" id="toc-vaccination-and-the-infectiondeath-rates-of-covid-19" class="nav-link" data-scroll-target="#vaccination-and-the-infectiondeath-rates-of-covid-19">Vaccination and the Infection/Death Rates of COVID-19</a>
+  <ul class="collapse">
+  <li><a href="#decomposing" id="toc-decomposing" class="nav-link" data-scroll-target="#decomposing">Decomposing</a></li>
+  <li><a href="#checking-stationarity" id="toc-checking-stationarity" class="nav-link" data-scroll-target="#checking-stationarity">Checking Stationarity</a></li>
+  <li><a href="#first-differencing" id="toc-first-differencing" class="nav-link" data-scroll-target="#first-differencing">First-Differencing</a></li>
+  <li><a href="#distribution-1" id="toc-distribution-1" class="nav-link" data-scroll-target="#distribution-1">Distribution</a></li>
+  <li><a href="#mann-whitney-u-test-and-result" id="toc-mann-whitney-u-test-and-result" class="nav-link" data-scroll-target="#mann-whitney-u-test-and-result">Mann-Whitney U test and Result</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Statistical Methods and Results</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>In this section, I will use hypothesis testing methods to examine the impact of population density on COVID-19 infection rates, and the impact of vaccines on the number of daily new COVID-19 cases and deaths in the United States.</p>
+</section>
+<section id="population-density-and-infection-rates-of-covid-19" class="level2">
+<h2 class="anchored" data-anchor-id="population-density-and-infection-rates-of-covid-19">Population Density and Infection Rates of COVID-19</h2>
+<p>Prior visualizations and analyses have revealed substantial global variations in COVID-19 infection rates. To investigate the potential correlation between these rates and population density, it is essential to first analyze the probability distributions of both COVID-19 infection rates (Total cases per million) and population densities across different countries.</p>
+<section id="distribution" class="level3">
+<h3 class="anchored" data-anchor-id="distribution">Distribution</h3>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram for 'total_cases_per_million'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million, <span class="at">main=</span><span class="st">"Histogram of Total Cases per Million"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Total Cases per Million"</span>, <span class="at">col=</span><span class="st">"lightblue"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q plot for 'total_cases_per_million'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram for 'population_density'</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(owid_covid_data_country_clean<span class="sc">$</span>population_density, <span class="at">main=</span><span class="st">"Histogram of Population Density"</span>, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Population Density"</span>, <span class="at">col=</span><span class="st">"lightgreen"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q plot for 'population_density'</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(owid_covid_data_country_clean<span class="sc">$</span>population_density)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(owid_covid_data_country_clean<span class="sc">$</span>population_density, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Statistical-Methods-Results_files/figure-html/plot1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The histogram of total cases per million is right-skewed, indicating that a majority of the data points are on the lower side of the scale, with fewer countries having very high total cases per million. The histogram of population density shows a very sharp right skew. This suggests that most countries have a relatively low population density, with very few countries having extremely high population densities.<br>
+The Q-Q plot for total cases per million deviates from the straight line, especially at the higher quantiles, which confirms the skew seen in the histogram. This indicates that the distribution of total cases per million is not normally distributed. The Q-Q plot for population density deviates significantly from the line across all quantiles, indicating that the distribution of population density is also not normal and is heavily skewed to the right.<br>
+Considering the non-normal distribution of your data, I want to use non-parametric tests, for instance, Spearman’s Rank Correlation Coefficient Test.</p>
+</section>
+<section id="spearmans-rank-correlation-coefficient-test-and-result" class="level3">
+<h3 class="anchored" data-anchor-id="spearmans-rank-correlation-coefficient-test-and-result">Spearman’s Rank Correlation Coefficient Test and Result</h3>
+<p>Spearman’s Rank Correlation Coefficient is a non-parametric test that measures the strength and direction of the association between two ranked variables. Unlike Pearson’s correlation coefficient, Spearman’s does not assume that the data are normally distributed, making it more appropriate for ordinal data or continuous data that do not meet the assumptions of normality. The null hypothesis and alternative hypothesis that were determined are listed below:</p>
+<ul>
+<li><p>H0: There is no monotonic relationship between ‘total cases per million’ and ‘population density’.</p></li>
+<li><p>H1: There is a monotonic relationship between ‘total cases(either increasing or decreasing, but not necessarily linear) per million’ and ‘population density’.</p></li>
+</ul>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Spearman's correlation test</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>spearman_result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million, owid_covid_data_country_clean<span class="sc">$</span>population_density, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(spearman_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  owid_covid_data_country_clean$total_cases_per_million and owid_covid_data_country_clean$population_density
+S = 1127116, p-value = 3.943e-05
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.2800833 </code></pre>
+</div>
+</div>
+<p>The result of the Spearman’s rank correlation test indicates a statistically significant association between the total cases per million and population density across different countries, as evidenced by the p-value of approximately 0.00003943. This p-value is much lower than the common alpha level of 0.05, suggesting that the observed correlation is unlikely to have occurred by chance.<br>
+The sample estimate of Spearman’s rho is 0.2800833, which denotes a positive correlation between the two variables. Although this value of rho suggests a positive association, it is not very strong. The coefficient indicates that as population density increases, the total cases per million tend to increase as well, albeit not in a perfectly linear fashion.<br>
+Given the alternative hypothesis that the true rho is not equal to zero, the test result supports the conclusion that there is a statistically significant but moderate positive correlation between population density and total COVID-19 cases per million. However, it is important to consider other factors that could also influence the number of reported COVID-19 cases and remember that correlation does not imply causation.</p>
+</section>
+</section>
+<section id="vaccination-and-the-infectiondeath-rates-of-covid-19" class="level2">
+<h2 class="anchored" data-anchor-id="vaccination-and-the-infectiondeath-rates-of-covid-19">Vaccination and the Infection/Death Rates of COVID-19</h2>
+<p>The analysis and visualizations previously presented reveal a notable decrease in daily new COVID-19 cases and deaths in the United States following the commencement of vaccinations. However, attributing this decline directly to the vaccine’s impact necessitates additional investigation. For the purpose of this study, I have postulated that the vaccine’s effects began to manifest subsequent to the initiation of the vaccination campaign on December 13, 2020. Accordingly, the data has been segregated into two distinct periods: pre-vaccination and post-vaccination, to be prepared for hypothesis testing. It is important to acknowledge that in reality, vaccines typically require a certain level of population coverage to effectively curb the spread of a virus. Nonetheless, for the sake of simplifying this analysis, I will proceed with the assumption that the vaccine began exerting its influence immediately after the vaccination program was launched.</p>
+<section id="decomposing" class="level3">
+<h3 class="anchored" data-anchor-id="decomposing">Decomposing</h3>
+<p>An important prerequisite for hypothesis testing in time series analysis, which sets it apart from cross-sectional data analysis, is the assessment of data stationarity. Stationarity implies that the time series’ statistical properties—such as mean, variance, and autocorrelation—remain constant over time. My prior analyses have indicated the presence of trends and seasonal fluctuations in the data pertaining to new cases and deaths. Consequently, I employed the decomposition method to transform the data, thereby stabilizing these temporal elements before proceeding further with hypothesis testing.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the decomposed components</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(decomposed_cases, <span class="at">main =</span> <span class="st">"Decomposition of Daily New COVID-19 Cases"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Statistical-Methods-Results_files/figure-html/plot2-1.png" class="img-fluid" width="672"></p>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(decomposed_deaths, <span class="at">main =</span> <span class="st">"Decomposition of Daily New COVID-19 Deaths"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Statistical-Methods-Results_files/figure-html/plot2-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="checking-stationarity" class="level3">
+<h3 class="anchored" data-anchor-id="checking-stationarity">Checking Stationarity</h3>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ADF test on new cases</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>adf_test_cases <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(residual_cases, <span class="at">alternative =</span> <span class="st">"stationary"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ADF test on new deaths</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>adf_test_deaths <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(residual_deaths, <span class="at">alternative =</span> <span class="st">"stationary"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output for new cases</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_test_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  residual_cases
+Dickey-Fuller = -8.9859, Lag order = 12, p-value = 0.01
+alternative hypothesis: stationary</code></pre>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Output for new deaths</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_test_deaths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  residual_deaths
+Dickey-Fuller = -3.1729, Lag order = 12, p-value = 0.09258
+alternative hypothesis: stationary</code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ACF and PACF for new cases residuals</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(residual_cases, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"ACF for Residual Cases"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(residual_cases, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"PACF for Residual Cases"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ACF and PACF for new deaths residuals</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(residual_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"ACF for Residual Deaths"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(residual_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"PACF for Residual Deaths"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Statistical-Methods-Results_files/figure-html/plot3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The ACF for residual cases shows a significant drop-off after the first few lags, suggesting that any autocorrelation in the original series may have been removed, likely due to differencing or other transformations. The PACF for residual cases displays a sharp cut-off after the first lag, which typically suggests an AR(1) process could be a good model for the time series.<br>
+The ACF for residual deaths decreases gradually, which may indicate a slower decay in correlation and could suggest a higher order of AR process or a need for further differencing. The PACF for residual deaths also trails off, suggesting complexity in the data that might not be fully captured by a simple AR or MA model.<br>
+For residual cases, the ADF test statistic is -8.9859 with a p-value of 0.01. Since the p-value is less than the common significance level of 0.05, we reject the null hypothesis of a unit root being present, indicating that the time series of residual cases is stationary.<br>
+For residual deaths, the ADF test statistic is -3.1729 with a p-value of 0.09258. This p-value is greater than 0.05, which means we fail to reject the null hypothesis of a unit root, indicating that the time series of residual deaths might not be stationary.<br>
+The analysis suggests that the residuals for cases are stationary and suitable for further analysis. However, the residuals for deaths may require further transformation to achieve stationarity, such as additional differencing.</p>
+</section>
+<section id="first-differencing" class="level3">
+<h3 class="anchored" data-anchor-id="first-differencing">First-Differencing</h3>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First differencing for new deaths residuals</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>diff_deaths <span class="ot">&lt;-</span> <span class="fu">diff</span>(residual_deaths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ACF and PACF for differenced new deaths residuals</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(diff_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"ACF for Differenced Residual Deaths"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(diff_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"PACF for Differenced Residual Deaths"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Statistical-Methods-Results_files/figure-html/plot4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>It can be seen that the time-series after the 1st-differencing is more stationary and basically meets the conditions for hypothesis testing.</p>
+</section>
+<section id="distribution-1" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-1">Distribution</h3>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming 'vaccine_start_date' is the date when vaccination started</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>vaccine_start_date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2020-12-13"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting the data</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>pre_vaccine_residual_cases <span class="ot">&lt;-</span> residual_cases[covid_data<span class="sc">$</span>date <span class="sc">&lt;</span> vaccine_start_date]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>post_vaccine_residual_cases <span class="ot">&lt;-</span> residual_cases[covid_data<span class="sc">$</span>date <span class="sc">&gt;=</span> vaccine_start_date]</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>pre_vaccine_diff_deaths <span class="ot">&lt;-</span> diff_deaths[covid_data<span class="sc">$</span>date <span class="sc">&lt;</span> vaccine_start_date]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>post_vaccine_diff_deaths <span class="ot">&lt;-</span> diff_deaths[covid_data<span class="sc">$</span>date <span class="sc">&gt;=</span> vaccine_start_date]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting for new cases</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pre_vaccine_residual_cases, <span class="at">main =</span> <span class="st">"Pre-Vaccine Residuals of New Cases"</span>, <span class="at">xlab =</span> <span class="st">"Residual Cases"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(post_vaccine_residual_cases, <span class="at">main =</span> <span class="st">"Post-Vaccine Residuals of New Cases"</span>, <span class="at">xlab =</span> <span class="st">"Residual Cases"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting for new deaths</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pre_vaccine_diff_deaths, <span class="at">main =</span> <span class="st">"Pre-Vaccine Differenced Residuals of New Deaths"</span>, <span class="at">xlab =</span> <span class="st">"Differenced Residual Deaths"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(post_vaccine_diff_deaths, <span class="at">main =</span> <span class="st">"Post-Vaccine Differenced Residuals of New Deaths"</span>, <span class="at">xlab =</span> <span class="st">"Differenced Residual Deaths"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="Statistical-Methods-Results_files/figure-html/plot5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>From the histogram, the residuals for new cases and new deaths do not fit the normal distribution, I can use a non-parametric test such as the Mann-Whitney U test.</p>
+</section>
+<section id="mann-whitney-u-test-and-result" class="level3">
+<h3 class="anchored" data-anchor-id="mann-whitney-u-test-and-result">Mann-Whitney U test and Result</h3>
+<p>The Mann-Whitney U test is a non-parametric statistical test that is used to compare differences between two independent groups when the dependent variable is either ordinal or continuous, but not normally distributed. It does not assume normality of the residuals and is especially useful when dealing with skewed distributions or when you have outliers that could affect the results of a parametric test like the t-test. The null hypothesis and alternative hypothesis that were determined are listed below:</p>
+<ul>
+<li><p>H0: There is no difference in the distribution of the differenced residuals of new COVID-19 cases before and after the vaccine rollout.</p></li>
+<li><p>H1: There is a difference in the distribution of the differenced residuals of new COVID-19 cases before and after the vaccine rollout.</p></li>
+</ul>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mann-Whitney U test for New Cases</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>wilcox_test_cases <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(pre_vaccine_residual_cases, post_vaccine_residual_cases)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Output the result</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wilcox_test_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  pre_vaccine_residual_cases and post_vaccine_residual_cases
+W = 433250, p-value = 3.388e-13
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mann-Whitney U test for New Deaths</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>wilcox_test_deaths <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(pre_vaccine_diff_deaths, post_vaccine_diff_deaths)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Output the result</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wilcox_test_deaths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  pre_vaccine_diff_deaths and post_vaccine_diff_deaths
+W = 368090, p-value = 0.3612
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p>The results suggest that the vaccine introduction had a statistically significant impact on the distribution of residual cases, which could reflect changes in trends or patterns of COVID-19 cases due to the effect of vaccination.<br>
+In contrast, the distribution of differenced deaths did not show a significant change before and after the vaccine introduction. This could mean that the vaccine’s impact on the patterns or trends of deaths was not as pronounced or detectable in the data, or that other confounding factors may have influenced the number of deaths.</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb19" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Statistical Methods and Results"</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">    page-layout: full</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>In this section, I will use hypothesis testing methods to examine the impact of population density on COVID-19 infection rates, and the impact of vaccines on the number of daily new COVID-19 cases and deaths in the United States.</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Population Density and Infection Rates of COVID-19</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>Prior visualizations and analyses have revealed substantial global variations in COVID-19 infection rates. To investigate the potential correlation between these rates and population density, it is essential to first analyze the probability distributions of both COVID-19 infection rates (Total cases per million) and population densities across different countries.</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribution</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r load, include=FALSE, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>owid_covid_data_country_clean <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"../data/owid_covid_data_country_clean.xlsx"</span>)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>owid_covid_data_us <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"../data/owid_covid_data_us.xlsx"</span>)</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r prepare_for_plot,include=FALSE, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the data by total_cases_per_million in ascending order</span></span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>sorted_cases <span class="ot">&lt;-</span> owid_covid_data_country_clean[<span class="fu">order</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million),]</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>sorted_deaths <span class="ot">&lt;-</span> owid_covid_data_country_clean[<span class="fu">order</span>(owid_covid_data_country_clean<span class="sc">$</span>total_deaths_per_million),]</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the 'location' column to a factor with levels ordered as in the sorted data</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>sorted_cases<span class="sc">$</span>location <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_cases<span class="sc">$</span>location, <span class="at">levels =</span> sorted_cases<span class="sc">$</span>location)</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>sorted_deaths<span class="sc">$</span>location <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_deaths<span class="sc">$</span>location, <span class="at">levels =</span> sorted_deaths<span class="sc">$</span>location)</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the 'date' column as date</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>owid_covid_data_us<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(owid_covid_data_us<span class="sc">$</span>date)</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, plot1, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram for 'total_cases_per_million'</span></span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million, <span class="at">main=</span><span class="st">"Histogram of Total Cases per Million"</span>, </span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Total Cases per Million"</span>, <span class="at">col=</span><span class="st">"lightblue"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q plot for 'total_cases_per_million'</span></span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million)</span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram for 'population_density'</span></span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(owid_covid_data_country_clean<span class="sc">$</span>population_density, <span class="at">main=</span><span class="st">"Histogram of Population Density"</span>, </span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Population Density"</span>, <span class="at">col=</span><span class="st">"lightgreen"</span>, <span class="at">border=</span><span class="st">"black"</span>)</span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q plot for 'population_density'</span></span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(owid_covid_data_country_clean<span class="sc">$</span>population_density)</span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(owid_covid_data_country_clean<span class="sc">$</span>population_density, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a>The histogram of total cases per million is right-skewed, indicating that a majority of the data points are on the lower side of the scale, with fewer countries having very high total cases per million. The histogram of population density shows a very sharp right skew. This suggests that most countries have a relatively low population density, with very few countries having extremely high population densities.\</span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>The Q-Q plot for total cases per million deviates from the straight line, especially at the higher quantiles, which confirms the skew seen in the histogram. This indicates that the distribution of total cases per million is not normally distributed. The Q-Q plot for population density deviates significantly from the line across all quantiles, indicating that the distribution of population density is also not normal and is heavily skewed to the right.\</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a>Considering the non-normal distribution of your data, I want to use non-parametric tests, for instance, Spearman's Rank Correlation Coefficient Test.</span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spearman's Rank Correlation Coefficient Test and Result</span></span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>Spearman's Rank Correlation Coefficient is a non-parametric test that measures the strength and direction of the association between two ranked variables. Unlike Pearson's correlation coefficient, Spearman's does not assume that the data are normally distributed, making it more appropriate for ordinal data or continuous data that do not meet the assumptions of normality. The null hypothesis and alternative hypothesis that were determined are listed below:</span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>H0: There is no monotonic relationship between 'total cases per million' and 'population density'.</span>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>H1: There is a monotonic relationship between 'total cases(either increasing or decreasing, but not necessarily linear)  per million' and 'population density’.</span>
+<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, test1, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Spearman's correlation test</span></span>
+<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a>spearman_result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(owid_covid_data_country_clean<span class="sc">$</span>total_cases_per_million, owid_covid_data_country_clean<span class="sc">$</span>population_density, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(spearman_result)</span>
+<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a>The result of the Spearman's rank correlation test indicates a statistically significant association between the total cases per million and population density across different countries, as evidenced by the p-value of approximately 0.00003943. This p-value is much lower than the common alpha level of 0.05, suggesting that the observed correlation is unlikely to have occurred by chance.\</span>
+<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>The sample estimate of Spearman's rho is 0.2800833, which denotes a positive correlation between the two variables. Although this value of rho suggests a positive association, it is not very strong. The coefficient indicates that as population density increases, the total cases per million tend to increase as well, albeit not in a perfectly linear fashion.\</span>
+<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a>Given the alternative hypothesis that the true rho is not equal to zero, the test result supports the conclusion that there is a statistically significant but moderate positive correlation between population density and total COVID-19 cases per million. However, it is important to consider other factors that could also influence the number of reported COVID-19 cases and remember that correlation does not imply causation.</span>
+<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vaccination and the Infection/Death Rates of COVID-19</span></span>
+<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a>The analysis and visualizations previously presented reveal a notable decrease in daily new COVID-19 cases and deaths in the United States following the commencement of vaccinations. However, attributing this decline directly to the vaccine's impact necessitates additional investigation. For the purpose of this study, I have postulated that the vaccine's effects began to manifest subsequent to the initiation of the vaccination campaign on December 13, 2020. Accordingly, the data has been segregated into two distinct periods: pre-vaccination and post-vaccination, to be prepared for hypothesis testing. It is important to acknowledge that in reality, vaccines typically require a certain level of population coverage to effectively curb the spread of a virus. Nonetheless, for the sake of simplifying this analysis, I will proceed with the assumption that the vaccine began exerting its influence immediately after the vaccination program was launched.</span>
+<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decomposing</span></span>
+<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a>An important prerequisite for hypothesis testing in time series analysis, which sets it apart from cross-sectional data analysis, is the assessment of data stationarity. Stationarity implies that the time series' statistical properties—such as mean, variance, and autocorrelation—remain constant over time. My prior analyses have indicated the presence of trends and seasonal fluctuations in the data pertaining to new cases and deaths. Consequently, I employed the decomposition method to transform the data, thereby stabilizing these temporal elements before proceeding further with hypothesis testing.</span>
+<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-102"><a href="#cb19-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, prepare_for_decompose,include=FALSE, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-103"><a href="#cb19-103" aria-hidden="true" tabindex="-1"></a>covid_data <span class="ot">&lt;-</span> owid_covid_data_us</span>
+<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a>covid_data<span class="sc">$</span>new_cases[<span class="fu">is.na</span>(covid_data<span class="sc">$</span>new_cases)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a>covid_data<span class="sc">$</span>new_deaths[<span class="fu">is.na</span>(covid_data<span class="sc">$</span>new_deaths)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a>covid_data<span class="sc">$</span>people_vaccinated[<span class="fu">is.na</span>(covid_data<span class="sc">$</span>people_vaccinated)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2020-01-03"</span>)</span>
+<span id="cb19-110"><a href="#cb19-110" aria-hidden="true" tabindex="-1"></a>end_date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2022-10-01"</span>)</span>
+<span id="cb19-111"><a href="#cb19-111" aria-hidden="true" tabindex="-1"></a>num_days <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(end_date <span class="sc">-</span> start_date) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a>new_cases_ts <span class="ot">&lt;-</span> <span class="fu">ts</span>(covid_data<span class="sc">$</span>new_cases, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">3</span>), <span class="at">frequency =</span> <span class="dv">365</span>, <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2022</span>, num_days))</span>
+<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a>new_deaths_ts <span class="ot">&lt;-</span> <span class="fu">ts</span>(covid_data<span class="sc">$</span>new_deaths, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">3</span>), <span class="at">frequency =</span> <span class="dv">365</span>, <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2022</span>, num_days))</span>
+<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a>decomposed_cases <span class="ot">&lt;-</span> <span class="fu">stl</span>(new_cases_ts, <span class="at">s.window =</span> <span class="st">"periodic"</span>)</span>
+<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a>decomposed_deaths <span class="ot">&lt;-</span> <span class="fu">stl</span>(new_deaths_ts, <span class="at">s.window =</span> <span class="st">"periodic"</span>)</span>
+<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot2, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the decomposed components</span></span>
+<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(decomposed_cases, <span class="at">main =</span> <span class="st">"Decomposition of Daily New COVID-19 Cases"</span>)</span>
+<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(decomposed_deaths, <span class="at">main =</span> <span class="st">"Decomposition of Daily New COVID-19 Deaths"</span>)</span>
+<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Checking Stationarity</span></span>
+<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, save_decompose, include=FALSE, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-130"><a href="#cb19-130" aria-hidden="true" tabindex="-1"></a>trend_cases <span class="ot">&lt;-</span> decomposed_cases<span class="sc">$</span>time.series[, <span class="st">"trend"</span>]</span>
+<span id="cb19-131"><a href="#cb19-131" aria-hidden="true" tabindex="-1"></a>seasonal_cases <span class="ot">&lt;-</span> decomposed_cases<span class="sc">$</span>time.series[, <span class="st">"seasonal"</span>]</span>
+<span id="cb19-132"><a href="#cb19-132" aria-hidden="true" tabindex="-1"></a>residual_cases <span class="ot">&lt;-</span> decomposed_cases<span class="sc">$</span>time.series[, <span class="st">"remainder"</span>]</span>
+<span id="cb19-133"><a href="#cb19-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-134"><a href="#cb19-134" aria-hidden="true" tabindex="-1"></a>trend_deaths <span class="ot">&lt;-</span> decomposed_deaths<span class="sc">$</span>time.series[, <span class="st">"trend"</span>]</span>
+<span id="cb19-135"><a href="#cb19-135" aria-hidden="true" tabindex="-1"></a>seasonal_deaths <span class="ot">&lt;-</span> decomposed_deaths<span class="sc">$</span>time.series[, <span class="st">"seasonal"</span>]</span>
+<span id="cb19-136"><a href="#cb19-136" aria-hidden="true" tabindex="-1"></a>residual_deaths <span class="ot">&lt;-</span> decomposed_deaths<span class="sc">$</span>time.series[, <span class="st">"remainder"</span>]</span>
+<span id="cb19-137"><a href="#cb19-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-138"><a href="#cb19-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-139"><a href="#cb19-139" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, test2, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-140"><a href="#cb19-140" aria-hidden="true" tabindex="-1"></a><span class="co"># ADF test on new cases</span></span>
+<span id="cb19-141"><a href="#cb19-141" aria-hidden="true" tabindex="-1"></a>adf_test_cases <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(residual_cases, <span class="at">alternative =</span> <span class="st">"stationary"</span>)</span>
+<span id="cb19-142"><a href="#cb19-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-143"><a href="#cb19-143" aria-hidden="true" tabindex="-1"></a><span class="co"># ADF test on new deaths</span></span>
+<span id="cb19-144"><a href="#cb19-144" aria-hidden="true" tabindex="-1"></a>adf_test_deaths <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(residual_deaths, <span class="at">alternative =</span> <span class="st">"stationary"</span>)</span>
+<span id="cb19-145"><a href="#cb19-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-146"><a href="#cb19-146" aria-hidden="true" tabindex="-1"></a><span class="co"># Output for new cases</span></span>
+<span id="cb19-147"><a href="#cb19-147" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_test_cases)</span>
+<span id="cb19-148"><a href="#cb19-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-149"><a href="#cb19-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Output for new deaths</span></span>
+<span id="cb19-150"><a href="#cb19-150" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_test_deaths)</span>
+<span id="cb19-151"><a href="#cb19-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-152"><a href="#cb19-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-153"><a href="#cb19-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot3, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-154"><a href="#cb19-154" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb19-155"><a href="#cb19-155" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb19-156"><a href="#cb19-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-157"><a href="#cb19-157" aria-hidden="true" tabindex="-1"></a><span class="co"># ACF and PACF for new cases residuals</span></span>
+<span id="cb19-158"><a href="#cb19-158" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(residual_cases, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"ACF for Residual Cases"</span>)</span>
+<span id="cb19-159"><a href="#cb19-159" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(residual_cases, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"PACF for Residual Cases"</span>)</span>
+<span id="cb19-160"><a href="#cb19-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-161"><a href="#cb19-161" aria-hidden="true" tabindex="-1"></a><span class="co"># ACF and PACF for new deaths residuals</span></span>
+<span id="cb19-162"><a href="#cb19-162" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(residual_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"ACF for Residual Deaths"</span>)</span>
+<span id="cb19-163"><a href="#cb19-163" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(residual_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"PACF for Residual Deaths"</span>)</span>
+<span id="cb19-164"><a href="#cb19-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-165"><a href="#cb19-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-166"><a href="#cb19-166" aria-hidden="true" tabindex="-1"></a>The ACF for residual cases shows a significant drop-off after the first few lags, suggesting that any autocorrelation in the original series may have been removed, likely due to differencing or other transformations. The PACF for residual cases displays a sharp cut-off after the first lag, which typically suggests an AR(1) process could be a good model for the time series.\</span>
+<span id="cb19-167"><a href="#cb19-167" aria-hidden="true" tabindex="-1"></a>The ACF for residual deaths decreases gradually, which may indicate a slower decay in correlation and could suggest a higher order of AR process or a need for further differencing. The PACF for residual deaths also trails off, suggesting complexity in the data that might not be fully captured by a simple AR or MA model.\</span>
+<span id="cb19-168"><a href="#cb19-168" aria-hidden="true" tabindex="-1"></a>For residual cases, the ADF test statistic is -8.9859 with a p-value of 0.01. Since the p-value is less than the common significance level of 0.05, we reject the null hypothesis of a unit root being present, indicating that the time series of residual cases is stationary.\</span>
+<span id="cb19-169"><a href="#cb19-169" aria-hidden="true" tabindex="-1"></a>For residual deaths, the ADF test statistic is -3.1729 with a p-value of 0.09258. This p-value is greater than 0.05, which means we fail to reject the null hypothesis of a unit root, indicating that the time series of residual deaths might not be stationary.\</span>
+<span id="cb19-170"><a href="#cb19-170" aria-hidden="true" tabindex="-1"></a>The analysis suggests that the residuals for cases are stationary and suitable for further analysis. However, the residuals for deaths may require further transformation to achieve stationarity, such as additional differencing.</span>
+<span id="cb19-171"><a href="#cb19-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-172"><a href="#cb19-172" aria-hidden="true" tabindex="-1"></a><span class="fu">### First-Differencing</span></span>
+<span id="cb19-173"><a href="#cb19-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-174"><a href="#cb19-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r first_diff, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-175"><a href="#cb19-175" aria-hidden="true" tabindex="-1"></a><span class="co"># First differencing for new deaths residuals</span></span>
+<span id="cb19-176"><a href="#cb19-176" aria-hidden="true" tabindex="-1"></a>diff_deaths <span class="ot">&lt;-</span> <span class="fu">diff</span>(residual_deaths)</span>
+<span id="cb19-177"><a href="#cb19-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-178"><a href="#cb19-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-179"><a href="#cb19-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot4, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-180"><a href="#cb19-180" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb19-181"><a href="#cb19-181" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb19-182"><a href="#cb19-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-183"><a href="#cb19-183" aria-hidden="true" tabindex="-1"></a><span class="co"># ACF and PACF for differenced new deaths residuals</span></span>
+<span id="cb19-184"><a href="#cb19-184" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(diff_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"ACF for Differenced Residual Deaths"</span>)</span>
+<span id="cb19-185"><a href="#cb19-185" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(diff_deaths, <span class="at">lag =</span> <span class="dv">48</span>, <span class="at">main=</span><span class="st">"PACF for Differenced Residual Deaths"</span>)</span>
+<span id="cb19-186"><a href="#cb19-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-187"><a href="#cb19-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-188"><a href="#cb19-188" aria-hidden="true" tabindex="-1"></a>It can be seen that the time-series after the 1st-differencing is more stationary and basically meets the conditions for hypothesis testing.</span>
+<span id="cb19-189"><a href="#cb19-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-190"><a href="#cb19-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribution</span></span>
+<span id="cb19-191"><a href="#cb19-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-192"><a href="#cb19-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r split, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-193"><a href="#cb19-193" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming 'vaccine_start_date' is the date when vaccination started</span></span>
+<span id="cb19-194"><a href="#cb19-194" aria-hidden="true" tabindex="-1"></a>vaccine_start_date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2020-12-13"</span>)</span>
+<span id="cb19-195"><a href="#cb19-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-196"><a href="#cb19-196" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting the data</span></span>
+<span id="cb19-197"><a href="#cb19-197" aria-hidden="true" tabindex="-1"></a>pre_vaccine_residual_cases <span class="ot">&lt;-</span> residual_cases[covid_data<span class="sc">$</span>date <span class="sc">&lt;</span> vaccine_start_date]</span>
+<span id="cb19-198"><a href="#cb19-198" aria-hidden="true" tabindex="-1"></a>post_vaccine_residual_cases <span class="ot">&lt;-</span> residual_cases[covid_data<span class="sc">$</span>date <span class="sc">&gt;=</span> vaccine_start_date]</span>
+<span id="cb19-199"><a href="#cb19-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-200"><a href="#cb19-200" aria-hidden="true" tabindex="-1"></a>pre_vaccine_diff_deaths <span class="ot">&lt;-</span> diff_deaths[covid_data<span class="sc">$</span>date <span class="sc">&lt;</span> vaccine_start_date]</span>
+<span id="cb19-201"><a href="#cb19-201" aria-hidden="true" tabindex="-1"></a>post_vaccine_diff_deaths <span class="ot">&lt;-</span> diff_deaths[covid_data<span class="sc">$</span>date <span class="sc">&gt;=</span> vaccine_start_date]</span>
+<span id="cb19-202"><a href="#cb19-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-203"><a href="#cb19-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-204"><a href="#cb19-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot5, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-205"><a href="#cb19-205" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up the layout</span></span>
+<span id="cb19-206"><a href="#cb19-206" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb19-207"><a href="#cb19-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-208"><a href="#cb19-208" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting for new cases</span></span>
+<span id="cb19-209"><a href="#cb19-209" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pre_vaccine_residual_cases, <span class="at">main =</span> <span class="st">"Pre-Vaccine Residuals of New Cases"</span>, <span class="at">xlab =</span> <span class="st">"Residual Cases"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb19-210"><a href="#cb19-210" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(post_vaccine_residual_cases, <span class="at">main =</span> <span class="st">"Post-Vaccine Residuals of New Cases"</span>, <span class="at">xlab =</span> <span class="st">"Residual Cases"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb19-211"><a href="#cb19-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-212"><a href="#cb19-212" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting for new deaths</span></span>
+<span id="cb19-213"><a href="#cb19-213" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pre_vaccine_diff_deaths, <span class="at">main =</span> <span class="st">"Pre-Vaccine Differenced Residuals of New Deaths"</span>, <span class="at">xlab =</span> <span class="st">"Differenced Residual Deaths"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb19-214"><a href="#cb19-214" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(post_vaccine_diff_deaths, <span class="at">main =</span> <span class="st">"Post-Vaccine Differenced Residuals of New Deaths"</span>, <span class="at">xlab =</span> <span class="st">"Differenced Residual Deaths"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">breaks =</span> <span class="dv">30</span>)</span>
+<span id="cb19-215"><a href="#cb19-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-216"><a href="#cb19-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-217"><a href="#cb19-217" aria-hidden="true" tabindex="-1"></a>From the histogram, the residuals for new cases and new deaths do not fit the normal distribution, I can use a non-parametric test such as the Mann-Whitney U test.</span>
+<span id="cb19-218"><a href="#cb19-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-219"><a href="#cb19-219" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mann-Whitney U test and Result</span></span>
+<span id="cb19-220"><a href="#cb19-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-221"><a href="#cb19-221" aria-hidden="true" tabindex="-1"></a>The Mann-Whitney U test is a non-parametric statistical test that is used to compare differences between two independent groups when the dependent variable is either ordinal or continuous, but not normally distributed. It does not assume normality of the residuals and is especially useful when dealing with skewed distributions or when you have outliers that could affect the results of a parametric test like the t-test. The null hypothesis and alternative hypothesis that were determined are listed below:</span>
+<span id="cb19-222"><a href="#cb19-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-223"><a href="#cb19-223" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>H0: There is no difference in the distribution of the differenced residuals of new COVID-19 cases before and after the vaccine rollout.</span>
+<span id="cb19-224"><a href="#cb19-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-225"><a href="#cb19-225" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>H1: There is a difference in the distribution of the differenced residuals of new COVID-19 cases before and after the vaccine rollout.</span>
+<span id="cb19-226"><a href="#cb19-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-227"><a href="#cb19-227" aria-hidden="true" tabindex="-1"></a><span class="in">```{r test3, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-228"><a href="#cb19-228" aria-hidden="true" tabindex="-1"></a><span class="co"># Mann-Whitney U test for New Cases</span></span>
+<span id="cb19-229"><a href="#cb19-229" aria-hidden="true" tabindex="-1"></a>wilcox_test_cases <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(pre_vaccine_residual_cases, post_vaccine_residual_cases)</span>
+<span id="cb19-230"><a href="#cb19-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-231"><a href="#cb19-231" aria-hidden="true" tabindex="-1"></a><span class="co"># Output the result</span></span>
+<span id="cb19-232"><a href="#cb19-232" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wilcox_test_cases)</span>
+<span id="cb19-233"><a href="#cb19-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-234"><a href="#cb19-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-235"><a href="#cb19-235" aria-hidden="true" tabindex="-1"></a><span class="in">```{r test4, message=FALSE, warning=FALSE}</span></span>
+<span id="cb19-236"><a href="#cb19-236" aria-hidden="true" tabindex="-1"></a><span class="co"># Mann-Whitney U test for New Deaths</span></span>
+<span id="cb19-237"><a href="#cb19-237" aria-hidden="true" tabindex="-1"></a>wilcox_test_deaths <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(pre_vaccine_diff_deaths, post_vaccine_diff_deaths)</span>
+<span id="cb19-238"><a href="#cb19-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-239"><a href="#cb19-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Output the result</span></span>
+<span id="cb19-240"><a href="#cb19-240" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wilcox_test_deaths)</span>
+<span id="cb19-241"><a href="#cb19-241" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-242"><a href="#cb19-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-243"><a href="#cb19-243" aria-hidden="true" tabindex="-1"></a>The results suggest that the vaccine introduction had a statistically significant impact on the distribution of residual cases, which could reflect changes in trends or patterns of COVID-19 cases due to the effect of vaccination.\</span>
+<span id="cb19-244"><a href="#cb19-244" aria-hidden="true" tabindex="-1"></a>In contrast, the distribution of differenced deaths did not show a significant change before and after the vaccine introduction. This could mean that the vaccine's impact on the patterns or trends of deaths was not as pronounced or detectable in the data, or that other confounding factors may have influenced the number of deaths.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

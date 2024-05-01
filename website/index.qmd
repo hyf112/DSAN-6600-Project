@@ -1,0 +1,54 @@
+---
+title: "Introduction"
+format:
+  html:
+    page-layout: full
+    code-fold: show
+    code-copy: true
+    code-tools: true
+    code-overflow: wrap
+---
+
+COVID-19, caused by the SARS-CoV-2 virus, was first identified in December 2019 in Wuhan, China. It quickly spread globally, leading the World Health Organization (WHO) to declare it a pandemic in March 2020. The virus primarily spreads through respiratory droplets and close contact, causing symptoms like fever, cough, and difficulty breathing. Severe cases can lead to pneumonia and death, especially in older adults and those with underlying health conditions.
+
+## Data Science Question
+
+The impact of COVID-19 has been profound and multi-faceted, affecting nearly every aspect of life globally. Two of the most significant impacts have been on human life and the global economy.\
+COVID-19 has resulted in a tragic loss of life worldwide. Globally, as of 3:52pm CET, 30 November 2023, there have been 772,052,752 confirmed cases of COVID-19, including 6,985,278 deaths, reported to WHO. This loss has not only been a human tragedy but has also had psychological and social repercussions, affecting the mental health of communities and changing the way people mourn and grieve.\
+[![Click on the logo to access the WHO Website!](pictures/logo-who.jpg)](https://covid19.who.int)\
+The pandemic has had a devastating impact on the global economy. To control the spread of the virus, many countries implemented lockdowns and social distancing measures, which led to a dramatic slowdown in economic activities. Key sectors such as travel, hospitality, and retail were particularly hard hit. The economic disruption caused widespread job losses, business closures, and financial strain for individuals and families. Governments around the world have had to inject substantial fiscal stimulus to support their economies, leading to increased national debts.\
+Overall, the COVID-19 pandemic has been a defining global crisis of the early 21st century, with its impacts likely to be felt for many years to come. Consequently, I believe that a thorough analysis of the factors affecting COVID-19's transmission and mortality is imperative. Such an investigation will enhance our comprehension of, and preparedness for, any future global pandemics. By understanding the variables that influence the spread and lethality of such diseases, we can develop more effective strategies to curb their proliferation and minimize fatalities. This proactive approach is vital to safeguard public health and preserve lives.
+
+## Literature Review
+
+### Population Density and the Transmission of COVID-19
+
+The COVID-19 pandemic has prompted extensive research into factors influencing its spread. A significant area of focus has been the role of population density.\
+Sy et al. (2021) conducted a comprehensive study across U.S. counties, revealing a strong correlation between population density and the basic reproductive number (R0) of COVID-19. They found that areas with higher population densities experienced greater transmission rates, likely due to increased interpersonal contact. The study identified a critical population density threshold necessary to sustain an outbreak, emphasizing the significance of population density in virus transmission dynamics (Sy et al., 2021).\
+In a study focusing on Turkey, Coşkun et al. (2021) explored the combined effect of population density and wind on COVID-19 spread. They concluded that these factors accounted for a significant portion of the variance in virus transmission. The study highlighted that wind, by increasing air circulation, could exacerbate the spread in denser areas, thus underlining the complex interplay between environmental factors and population density in the pandemic's trajectory (Coşkun et al., 2021).\
+Yin et al. (2021) investigated the association between population density and COVID-19 infection rates in both China and the USA. Their findings underscored a positive correlation, particularly in regions with severe outbreaks. The study supported the efficacy of social distancing and travel restrictions, pointing out the critical role of population density in managing the spread of the virus (Yin et al., 2021).\
+Lastly, Wong and Li (2020) presented a study demonstrating that population density was an effective predictor of cumulative infection cases in U.S. counties. Their research incorporated additional demographic variables, such as the percentages of African Americans and Hispanic-Latinas, finding that while these factors influenced infection rates, the impact of population density remained consistently significant. This study highlighted the necessity of including population density in predictive models for COVID-19 spread (Wong & Li, 2020).\
+In conclusion, these studies collectively underscore the crucial role of population density in the transmission dynamics of COVID-19.
+
+### Vaccination and the Infection/Death Rates of COVID-19
+
+The onset of the COVID-19 pandemic has prompted unprecedented global efforts in vaccine development and distribution at the same time. As vaccination campaigns roll out worldwide, it becomes crucial to evaluate their impact on reducing infection and mortality rates.\
+A study by the BMJ (2023) conducted a comprehensive observational study to assess the public health impact of COVID-19 vaccines across counties in the United States. Using data from December 2020 to December 2021, the study utilized generalized linear mixed models to explore the association between vaccination coverage and the rates of COVID-19 cases and deaths. The study's findings indicate a significant reduction in COVID-19 cases and deaths correlating with increased vaccination coverage, even when accounting for social vulnerability and community mobility (The BMJ, 2023).\
+Similarly, another study published in Scientific Reports (2023) analyzed the impact of COVID-19 vaccination on the pandemic's trajectory in various U.S. states. This study focused on the average treatment effect of vaccination on the growth rates of total cases and hospitalizations. It found that COVID-19 vaccines have significantly slowed the pandemic, with a notable reduction in the number of cases and hospitalizations. This study also explored potential biases and the heterogeneous effects of vaccination across different states, finding no significant differences based on demographic or political factors (Scientific Reports, 2023).\
+Expanding the scope to a global perspective, a study indexed in PubMed (2023) analyzed the effect of COVID-19 vaccination on daily cases and deaths worldwide. The study demonstrated that increased vaccination rates are associated with a decrease in new COVID-19 cases and deaths globally. However, it also highlighted the challenges of unequal vaccine distribution across countries, emphasizing the need for fair and accelerated distribution to combat the pandemic effectively (PubMed, 2023).\
+Collectively, these studies offer robust evidence of the positive impact of COVID-19 vaccination campaigns on reducing infection and mortality rates.
+
+## Summary
+
+In summary, my research project aims to answer the following questions:
+
+- Are there significant differences in COVID-19 infection rates around the world?
+
+- Does population density affect COVID-19 infection rates?
+
+- Does vaccination help mitigate the spread of COVID-19?
+
+- Does vaccination help reduce COVID-19 mortality rate?
+
+
+

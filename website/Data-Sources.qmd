@@ -1,0 +1,33 @@
+---
+title: "Data Sources"
+format:
+  html:
+    page-layout: full
+    code-fold: show
+    code-copy: true
+    code-tools: true
+    code-overflow: wrap
+---
+
+## Our World in Data (OWID) COVID-19 Data 
+
+The [Our World in Data](https://ourworldindata.org/coronavirus) Coronavirus Pandemic (COVID-19) dataset is an open and comprehensive resource for data related to the COVID-19 pandemic. The dataset provides extensive data on COVID-19 cases, deaths, testing, vaccinations, and various other metrics. It covers a global scope, with data from nearly every country in the world. The information is compiled from various reputable sources, including the World Health Organization (WHO), European Centre for Disease Prevention and Control (ECDC), and numerous other national and international health agencies. The dataset is updated regularly, often daily, to provide the most current information available on the pandemic's status across the globe.
+
+[![Click on the logo to access the sample data of US!](pictures/owid.png)](../data/owid_covid_data_us.xlsx)
+
+## Key Attributes
+
+| Key Attributes | Illustration |
+|----------|----------|
+| Date | From 2020-01-04 to 2023-05-20 |
+| Total cases | Cumulative number of confirmed COVID-19 cases |
+| Total deaths | Cumulative number of confirmed COVID-19 deaths |
+| Total cases per million | The Metric for measuring infection rates |
+| New cases | The Metric for measuring the speed of COVID-19 infections |
+| New deaths | The Metric for measuring the virulence of COVID-19 |
+| Population density | The measure of the concentration of population in each country |
+| People vaccinated | Measuring vaccination rates |
+
+## Data Cleaning
+
+The data set provided by OWID is very complete, and I only need to do some simple data cleaning work, including converting column formats and using interpolation to deal with a small number of missing values.

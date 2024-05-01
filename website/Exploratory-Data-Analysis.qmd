@@ -1,0 +1,256 @@
+---
+title: "Exploratory Data Analysis"
+format:
+  html:
+    page-layout: full
+    code-fold: show
+    code-copy: true
+    code-tools: true
+    code-overflow: wrap
+---
+
+## Summary
+
+In this section, the visualizations were generated utilizing *Tableau* along with the `ggplot2` and `Plotly` packages within the *R* programming environment. I studied COVID-19 infections and deaths around the world, with a focus on the spread of COVID-19 in the United States over time.
+
+## Global COVID-19 Infection and Death Rates
+
+I initially aimed to assess the global impact of COVID-19. Broadly, the infection and mortality rates of a pandemic virus serve as critical metrics in gauging its overall effect. To account for demographic variations across countries, I have opted to evaluate each nation's COVID-19 infection and mortality rates based on the number of confirmed cases and deaths per million inhabitants.
+
+### Global Map
+
+#### Infection Rate
+
+```{=html}
+<div class='tableauPlaceholder' id='viz1701637165349' style='position: relative'>
+    <noscript><a href='#'><img alt='Covid-19 Infection Rates in the World (Measured by Total Cases per Million)' 
+    src='https://public.tableau.com/static/images/Gl/Global_Infection_Rates/Geospatial_Plot_Total_Cases_Per_Million/1_rss.png' 
+    style='border: none'></a></noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+        <param name='embed_code_version' value='3' /> 
+        <param name='site_root' value='' />
+        <param name='name' value='Global_Infection_Rates/Geospatial_Plot_Total_Cases_Per_Million' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/Gl/Global_Infection_Rates/Geospatial_Plot_Total_Cases_Per_Million/1.png' /> 
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='zh-CN' />
+        <param name='filter' value='publish=yes' />
+    </object>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1701637165349');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+```
+
+#### Death Rate
+
+```{=html}
+<div class='tableauPlaceholder' id='viz1701644742127' style='position: relative'>
+    <noscript><a href='#'><img alt='Covid-19 Death Rates in the World (Measured by Total Deaths per Million)' 
+    src='https://public.tableau.com/static/images/To/Total_deaths_per_million_geo/Geospatial_Plot_Total_Deaths_Per_Million/1_rss.png' 
+    style='border: none'></a></noscript>
+    <object class='tableauViz'  style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+        <param name='embed_code_version' value='3' /> 
+        <param name='site_root' value='' />
+        <param name='name' value='Total_deaths_per_million_geo/Geospatial_Plot_Total_Deaths_Per_Million' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/To/Total_deaths_per_million_geo/Geospatial_Plot_Total_Deaths_Per_Million/1.png' /> 
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='zh-CN' />
+        <param name='filter' value='publish=yes' />
+    </object>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1701644742127');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+```
+
+### Bar Plot (By Country)
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+library(readxl)
+library(plotly)
+library(dplyr)
+library(zoo)
+```
+
+```{r load, include=FALSE, message=FALSE, warning=FALSE}
+owid_covid_data_country_clean <- readxl::read_xlsx("../data/owid_covid_data_country_clean.xlsx")
+owid_covid_data_us <- readxl::read_xlsx("../data/owid_covid_data_us.xlsx")
+```
+
+```{r prepare_for_plot,include=FALSE, message=FALSE, warning=FALSE}
+# Sort the data by total_cases_per_million in ascending order
+sorted_cases <- owid_covid_data_country_clean[order(owid_covid_data_country_clean$total_cases_per_million),]
+sorted_deaths <- owid_covid_data_country_clean[order(owid_covid_data_country_clean$total_deaths_per_million),]
+
+# Convert the 'location' column to a factor with levels ordered as in the sorted data
+sorted_cases$location <- factor(sorted_cases$location, levels = sorted_cases$location)
+sorted_deaths$location <- factor(sorted_deaths$location, levels = sorted_deaths$location)
+
+# Convert the 'date' column as date
+owid_covid_data_us$date <- as.Date(owid_covid_data_us$date)
+```
+
+::: panel-tabset
+
+#### Infection Rate
+
+```{r plot1, message=FALSE, warning=FALSE}
+plot_infection_rate <- plot_ly(data = sorted_cases, y = ~location, x = ~total_cases_per_million, type = 'bar', orientation = 'h', name = 'Total Cases per Million', height = 2000, marker = list(color = 'red')) %>%
+  layout(xaxis = list(title = 'Total Cases per Million'), title = 'COVID-19 Total Cases Per Million by Country')
+
+plot_infection_rate
+```
+
+#### Death Rate
+
+```{r plot2, message=FALSE, warning=FALSE}
+plot_death_rate <- plot_ly(data = sorted_deaths, y = ~location, x = ~total_deaths_per_million, type = 'bar', orientation = 'h', name = 'Total Deaths per Million', height = 2000, marker = list(color = 'green')) %>%
+  layout(xaxis = list(title = 'Total Deaths per Million'), title = 'COVID-19 Total Deaths Per Million by Country')
+
+plot_death_rate
+```
+
+:::
+
+It's evident that notable disparities exist in the infection and mortality rates of COVID-19 across various countries, attributable to an array of elements. These include the efficacy of public health measures and policies, the extent and accuracy of testing and reporting, the robustness of healthcare systems, demographic nuances such as the population's age distribution, socioeconomic variables, cultural practices, vaccination uptake, and the emergence of different virus strains. Among these nations, the United States presents a particularly intriguing case. Despite its overall resources and capabilities, it has experienced higher rates of infection and fatalities. This juxtaposition positions the United States as a valuable case for in-depth analysis. Consequently, my forthcoming research will be dedicated to examining the trajectory of COVID-19 in the United States.
+
+## Trajectory of COVID-19 in the US
+
+### Cumulative confirmed COVID-19 Cases and Deaths in the US
+
+::: panel-tabset
+
+#### Total Cases
+```{r plot3, message=FALSE, warning=FALSE}
+plot_total_cases <- plot_ly(data = owid_covid_data_us, x = ~date, y = ~total_cases, type = 'scatter', mode = 'lines', name = 'Total Cases', line = list(color = 'red')) %>%
+                    layout(title = "Cumulative confirmed COVID-19 Cases in the US", xaxis = list(title = "Date"), yaxis = list(title = "Total Cases"))
+
+plot_total_cases
+```
+
+#### Total Deaths
+
+```{r plot4, message=FALSE, warning=FALSE}
+plot_total_deaths <- plot_ly(data = owid_covid_data_us, x = ~date, y = ~total_deaths, type = 'scatter', mode = 'lines', name = 'Total Deaths', line = list(color = 'green')) %>%
+                    layout(title = "Cumulative confirmed COVID-19 Deaths in the US", xaxis = list(title = "Date"), yaxis = list(title = "Total Deaths"))
+
+plot_total_deaths
+```
+
+:::
+
+The aggregate figures for confirmed COVID-19 cases and deaths provide a visual overview of the virus's spread in the United States, yet they lack the granularity required for a detailed analysis, particularly when examining the progression in the growth of cases and fatalities. A closer examination of the changes in growth rates of these cases and deaths is more insightful, as it can more accurately indicate the effectiveness of various factors, such as temperature fluctuations and vaccination efforts, in curtailing the spread of COVID-19 and diminishing its mortality rate.
+
+### Daily New Confirmed COVID-19 Cases and Deaths in the US
+
+::: panel-tabset
+
+#### Daily New Cases
+```{r plot5, message=FALSE, warning=FALSE}
+plot_new_cases <- plot_ly(data = owid_covid_data_us, x = ~date, y = ~new_cases, type = 'scatter', mode = 'lines', name = 'New Cases', line = list(color = 'red')) %>%
+                    layout(title = "Daily new confirmed COVID-19 Cases in the US", xaxis = list(title = "Date"), yaxis = list(title = "New Cases"))
+
+plot_new_cases
+```
+
+#### Daily New Deaths
+
+```{r plot6, message=FALSE, warning=FALSE}
+plot_new_deaths <- plot_ly(data = owid_covid_data_us, x = ~date, y = ~new_deaths, type = 'scatter', mode = 'lines', name = 'New Deaths', line = list(color = 'green')) %>%
+                    layout(title = "Daily new confirmed COVID-19 Deaths in the US", xaxis = list(title = "Date"), yaxis = list(title = "New Deaths"))
+
+plot_new_deaths
+```
+
+:::
+
+I have noticed pronounced irregularities in the daily new confirmed COVID-19 cases and deaths in the United States, attributable to several factors:
+
+- Reporting Delays and Backlogs: Inconsistencies in the timing of reporting and processing new cases can cause substantial daily variations. For instance, when a backlog of cases is reported simultaneously, this leads to an abrupt surge, followed by a noticeable decrease in the subsequent days.
+- Weekend and Holiday Reporting Patterns: Testing centers and reporting agencies often operate with reduced staff or close entirely during weekends and holidays. This typically results in fewer cases being reported on these days, followed by a marked increase when these delayed reports are processed and released, generally at the start of the week.
+- Variability in Testing Rates: The number of tests conducted can fluctuate, influencing the reported case numbers. For instance, an escalation in testing efforts might result in identifying more cases, whereas constrained testing might not capture the true extent of case numbers.
+
+These elements contribute to the irregular patterns observed in the daily COVID-19 statistics and underscore the need for looking at longer-term trends rather than focusing solely on day-to-day changes. Therefore, I use a 7-day rolling average to smooth out these irregularities and get a clearer picture of the overall trend.
+
+### Daily New Confirmed COVID-19 Cases and Deaths (7-day rolling average) in the US
+
+::: panel-tabset
+
+#### Daily New Cases (7-day rolling average)
+
+```{r, 7_day_rolling, include=FALSE, message=FALSE, warning=FALSE}
+#owid_covid_data_us$new_cases_smoothed <- rollmean(owid_covid_data_us$new_cases, 7, fill = NA, align = "right")
+#owid_covid_data_us$new_deaths_smoothed <- rollmean(owid_covid_data_us$new_deaths, 7, fill = NA, align = "right")
+```
+
+```{r plot7, message=FALSE, warning=FALSE}
+plot_new_cases_smoothed <- plot_ly(data = owid_covid_data_us, x = ~date, y = ~new_cases_smoothed, type = 'scatter', mode = 'lines', name = '7-Day Smoothed New Cases', line = list(color = 'red')) %>%
+                    layout(title = "7-Day Smoothed Daily New COVID-19 Cases in the US", xaxis = list(title = "Date"), yaxis = list(title = "New Cases (7-day rolling average)"))
+
+# Adding a vertical line to mark the start of vaccination on 2020-12-13
+vaccination_start_date <- as.Date("2020-12-13")
+plot_new_cases_smoothed <- plot_new_cases_smoothed %>%
+  add_segments(x = ~vaccination_start_date, xend = ~vaccination_start_date, 
+               y = 0, yend = max(owid_covid_data_us$new_cases_smoothed, na.rm = TRUE),
+               line = list(color = "blue", width = 2, dash = "dash"),
+               showlegend = FALSE) %>%
+  add_annotations(x = vaccination_start_date, y = max(owid_covid_data_us$new_cases_smoothed, na.rm = TRUE), 
+                  text = "Start of Vaccination", showarrow = TRUE, 
+                  arrowhead = 2, ax = 20, ay = 0)
+
+plot_new_cases_smoothed
+```
+
+#### Daily New Deaths (7-day rolling average)
+
+```{r plot8, message=FALSE, warning=FALSE}
+plot_new_deaths_smoothed <- plot_ly(data = owid_covid_data_us, x = ~date, y = ~new_deaths_smoothed, type = 'scatter', mode = 'lines', name = '7-Day Smoothed New Deaths', line = list(color = 'green')) %>%
+                    layout(title = "7-Day Smoothed Daily New COVID-19 Deaths in the US", xaxis = list(title = "Date"), yaxis = list(title = "New Deaths (7-day rolling average)"))
+
+# Adding a vertical line to mark the start of vaccination on 2020-12-13
+vaccination_start_date <- as.Date("2020-12-13")
+plot_new_deaths_smoothed <- plot_new_deaths_smoothed %>%
+  add_segments(x = ~vaccination_start_date, xend = ~vaccination_start_date, 
+               y = 0, yend = max(owid_covid_data_us$new_deaths_smoothed, na.rm = TRUE),
+               line = list(color = "blue", width = 2, dash = "dash"),
+               showlegend = FALSE) %>%
+  add_annotations(x = vaccination_start_date, y = max(owid_covid_data_us$new_deaths_smoothed, na.rm = TRUE), 
+                  text = "Start of Vaccination", showarrow = TRUE, 
+                  arrowhead = 2, ax = 20, ay = 0)
+
+plot_new_deaths_smoothed
+```
+
+:::
+
+The 7-day smoothed data charts for daily new COVID-19 cases and deaths in the United States reveal:
+
+- Cyclical Variability: The charts exhibit distinct oscillations with successive peaks and troughs, with peaks appearing in early 2021, August 2021, and early 2022, of which the peak in August 2021 should correspond to the delta variant pandemic and the peak in early 2022 corresponds to the Omikron variant pandemic. Notably, the case count surge in January 2022 markedly outstrips other periods. While the corresponding rise in deaths is also conspicuous, it does not mirror the cases' peak with the same magnitude, which may reflect the difference between the Omicron variant and all previous variants: it is more transmissible, but does not show a higher fatality rate. I noticed that 1 month after vaccination started on December 13, 2020, the number of new daily cases and deaths in the United States began to decline. But whether this decline is an effect of the vaccine is unclear.
+- Seasonal Trends: A seasonal trend is discernible, with infection and death rates typically intensifying during the colder months, such as January of both 2021 and 2022, possibly due to increased indoor congregation. Conversely, the months of August and September of each year also witness upticks, albeit less pronounced than the winter surges.
+- Temporal Lags Between Cases and Deaths: An observable delay exists between the spikes in new cases and subsequent increases in deaths, aligning with the disease's trajectory, which includes a period between initial infection, the emergence of severe symptoms, and any resulting fatalities. This lag indicates the time required for a rise in infections to manifest as an uptick in mortality rates.
+
+The data captured in these charts underscore the pandemic's intricate dynamics, potentially shaped by factors such as public health measures, behavioral shifts among the populace, and the advent of new viral strains.
