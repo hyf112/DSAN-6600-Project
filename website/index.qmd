@@ -9,7 +9,7 @@ format:
     code-overflow: wrap
 ---
 
-COVID-19, caused by the SARS-CoV-2 virus, was first identified in December 2019 in Wuhan, China. It quickly spread globally, leading the World Health Organization (WHO) to declare it a pandemic in March 2020. The virus primarily spreads through respiratory droplets and close contact, causing symptoms like fever, cough, and difficulty breathing. Severe cases can lead to pneumonia and death, especially in older adults and those with underlying health conditions.
+From 2019 to 2023, COVID-19 profoundly impacted our lives, including how we study and communicate. Consequently, effective measures to curb the virus's spread are essential. Research has validated that masks significantly decrease the risk of transmitting the virus, leading to the development of mask recognition systems. These systems primarily rely on image recognition technology to determine whether individuals are wearing masks.
 
 ## Data Science Question
 

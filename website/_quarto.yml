@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "COVID-19 Affecting Factors and Hypothetical Analysis - Yifan Hu"
+  title: "Face Mask Detection - Yifan Hu"
   sidebar:
     style: "docked"
     contents: 
@@ -10,10 +10,6 @@ website:
         text: Introduction
       - href: Data-Sources.qmd
         text: Data Sources
-      - href: Exploratory-Data-Analysis.qmd
-        text: Exploratory Data Analysis
-      - href: Statistical-Methods-Results.qmd
-        text: Statistical Methods and Results
       - href: Conclusion.qmd
         text: Conclusion
       - href: Reference.qmd

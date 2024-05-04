@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>COVID-19 Affecting Factors and Hypothetical Analysis - Yifan Hu - Data Sources</title>
+<title>Face Mask Detection - Yifan Hu - Data Sources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">COVID-19 Affecting Factors and Hypothetical Analysis - Yifan Hu</a> 
+      <a href="./">Face Mask Detection - Yifan Hu</a> 
         <div class="sidebar-tools-main">
     <div class="dropdown">
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
@@ -157,20 +157,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Exploratory-Data-Analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploratory Data Analysis</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Statistical-Methods-Results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Methods and Results</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./Conclusion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conclusion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference</span></a>
   </div>
 </li>
     </ul>
@@ -183,9 +177,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#our-world-in-data-owid-covid-19-data" id="toc-our-world-in-data-owid-covid-19-data" class="nav-link active" data-scroll-target="#our-world-in-data-owid-covid-19-data">Our World in Data (OWID) COVID-19 Data</a></li>
+  <li><a href="#face-mask-detection-12k-images-dataset" id="toc-face-mask-detection-12k-images-dataset" class="nav-link active" data-scroll-target="#face-mask-detection-12k-images-dataset">Face Mask Detection ~12K Images Dataset</a></li>
   <li><a href="#key-attributes" id="toc-key-attributes" class="nav-link" data-scroll-target="#key-attributes">Key Attributes</a></li>
-  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a></li>
   </ul>
 </nav>
     </div>
@@ -209,13 +203,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="our-world-in-data-owid-covid-19-data" class="level2">
-<h2 class="anchored" data-anchor-id="our-world-in-data-owid-covid-19-data">Our World in Data (OWID) COVID-19 Data</h2>
-<p>The <a href="https://ourworldindata.org/coronavirus">Our World in Data</a> Coronavirus Pandemic (COVID-19) dataset is an open and comprehensive resource for data related to the COVID-19 pandemic. The dataset provides extensive data on COVID-19 cases, deaths, testing, vaccinations, and various other metrics. It covers a global scope, with data from nearly every country in the world. The information is compiled from various reputable sources, including the World Health Organization (WHO), European Centre for Disease Prevention and Control (ECDC), and numerous other national and international health agencies. The dataset is updated regularly, often daily, to provide the most current information available on the pandemic’s status across the globe.</p>
+<section id="face-mask-detection-12k-images-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="face-mask-detection-12k-images-dataset">Face Mask Detection ~12K Images Dataset</h2>
+<p>The dataset used in our study is <a href="https://www.kaggle.com/datasets/ashishjangra27/face-mask-12k-images-dataset/data">Face Mask Detection ~12K Images Dataset</a>, which is used for Face Mask Detection Classification with images. The dataset consists of almost 12K images which are almost 328.92MB in size.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../data/owid_covid_data_us.xlsx"><img src="pictures/owid.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Click on the logo to access the sample data of US!</figcaption>
+<p><img src="pictures/dataset-cover.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">So Many Faces We Have!</figcaption>
 </figure>
 </div>
 </section>
@@ -223,54 +217,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="key-attributes">Key Attributes</h2>
 <table class="table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 73%">
+<col style="width: 14%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Key Attributes</th>
-<th>Illustration</th>
+<th>image_path</th>
+<th>label</th>
+<th>location</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Date</td>
-<td>From 2020-01-04 to 2023-05-20</td>
+<td>input/Face Mask Dataset/Test/WithoutMask/2734.png</td>
+<td>WithoutMask</td>
+<td>Test</td>
 </tr>
 <tr class="even">
-<td>Total cases</td>
-<td>Cumulative number of confirmed COVID-19 cases</td>
+<td>input/Face Mask Dataset/Test/WithoutMask/4345.png</td>
+<td>WithoutMask</td>
+<td>Test</td>
 </tr>
 <tr class="odd">
-<td>Total deaths</td>
-<td>Cumulative number of confirmed COVID-19 deaths</td>
+<td>input/Face Mask Dataset/Test/WithoutMask/4423.png</td>
+<td>WithoutMask</td>
+<td>Test</td>
 </tr>
 <tr class="even">
-<td>Total cases per million</td>
-<td>The Metric for measuring infection rates</td>
+<td>input/Face Mask Dataset/Test/WithoutMask/2052.png</td>
+<td>WithoutMask</td>
+<td>Test</td>
 </tr>
 <tr class="odd">
-<td>New cases</td>
-<td>The Metric for measuring the speed of COVID-19 infections</td>
-</tr>
-<tr class="even">
-<td>New deaths</td>
-<td>The Metric for measuring the virulence of COVID-19</td>
-</tr>
-<tr class="odd">
-<td>Population density</td>
-<td>The measure of the concentration of population in each country</td>
-</tr>
-<tr class="even">
-<td>People vaccinated</td>
-<td>Measuring vaccination rates</td>
+<td>input/Face Mask Dataset/Test/WithoutMask/3364.png</td>
+<td>WithoutMask</td>
+<td>Test</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="data-cleaning" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h2>
-<p>The data set provided by OWID is very complete, and I only need to do some simple data cleaning work, including converting column formats and using interpolation to deal with a small number of missing values.</p>
+<section id="data-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing">Data Preprocessing</h2>
+<p>The data set is divided in training, testing and validation directories.</p>
 
 
 <!-- -->
@@ -573,28 +562,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Our World in Data (OWID) COVID-19 Data </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Face Mask Detection ~12K Images Dataset</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Our World in Data</span><span class="co">](https://ourworldindata.org/coronavirus)</span> Coronavirus Pandemic (COVID-19) dataset is an open and comprehensive resource for data related to the COVID-19 pandemic. The dataset provides extensive data on COVID-19 cases, deaths, testing, vaccinations, and various other metrics. It covers a global scope, with data from nearly every country in the world. The information is compiled from various reputable sources, including the World Health Organization (WHO), European Centre for Disease Prevention and Control (ECDC), and numerous other national and international health agencies. The dataset is updated regularly, often daily, to provide the most current information available on the pandemic's status across the globe.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>The dataset used in our study is <span class="co">[</span><span class="ot">Face Mask Detection ~12K Images Dataset</span><span class="co">](https://www.kaggle.com/datasets/ashishjangra27/face-mask-12k-images-dataset/data)</span>, which is used for Face Mask Detection Classification with images. The dataset consists of almost 12K images which are almost 328.92MB in size.</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Click on the logo to access the sample data of US!](pictures/owid.png)</span><span class="co">](../data/owid_covid_data_us.xlsx)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="al">![So Many Faces We Have!](pictures/dataset-cover.png)</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Attributes</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>| Key Attributes | Illustration |</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>|----------|----------|</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>| Date | From 2020-01-04 to 2023-05-20 |</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>| Total cases | Cumulative number of confirmed COVID-19 cases |</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>| Total deaths | Cumulative number of confirmed COVID-19 deaths |</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>| Total cases per million | The Metric for measuring infection rates |</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>| New cases | The Metric for measuring the speed of COVID-19 infections |</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>| New deaths | The Metric for measuring the virulence of COVID-19 |</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>| Population density | The measure of the concentration of population in each country |</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>| People vaccinated | Measuring vaccination rates |</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>| image_path                                                  | label      | location |</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>|-------------------------------------------------------------|------------|----------|</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>| input/Face Mask Dataset/Test/WithoutMask/2734.png           | WithoutMask| Test     |</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>| input/Face Mask Dataset/Test/WithoutMask/4345.png           | WithoutMask| Test     |</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>| input/Face Mask Dataset/Test/WithoutMask/4423.png           | WithoutMask| Test     |</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>| input/Face Mask Dataset/Test/WithoutMask/2052.png           | WithoutMask| Test     |</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>| input/Face Mask Dataset/Test/WithoutMask/3364.png           | WithoutMask| Test     |</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Preprocessing</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Cleaning</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>The data set is divided in training, testing and validation directories.</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>The data set provided by OWID is very complete, and I only need to do some simple data cleaning work, including converting column formats and using interpolation to deal with a small number of missing values.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, }</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
