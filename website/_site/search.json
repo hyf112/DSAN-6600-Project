@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Introduction",
     "section": "",
-    "text": "From 2019 to 2023, COVID-19 profoundly impacted our lives, including how we study and communicate. Consequently, effective measures to curb the virus’s spread are essential. Research has validated that masks significantly decrease the risk of transmitting the virus, leading to the development of mask recognition systems. These systems primarily rely on image recognition technology to determine whether individuals are wearing masks."
+    "text": "From 2019 to 2023, COVID-19 has profoundly impacted various facets of our lives, including education and communication. In response, the adoption of effective countermeasures to mitigate the spread of the virus has been imperative. Academic research supports the efficacy of facial masks in significantly reducing virus transmission, which has subsequently catalyzed the development of mask recognition systems. These systems predominantly utilize image recognition technologies to ascertain mask compliance among individuals."
   },
   {
     "objectID": "index.html#data-science-question",
@@ -32,7 +32,7 @@
     "href": "index.html#summary",
     "title": "Introduction",
     "section": "Summary",
-    "text": "Summary\nIn summary, my research project aims to answer the following questions:\n\nAre there significant differences in COVID-19 infection rates around the world?\nDoes population density affect COVID-19 infection rates?\nDoes vaccination help mitigate the spread of COVID-19?\nDoes vaccination help reduce COVID-19 mortality rate?"
+    "text": "Summary\nIn this study, the CNN model was initially trained on avatar images to recognize face masks, achieving an impressive accuracy of 91%. Subsequent incorporation of an attention mechanism into the CNN architecture further elevated the model’s accuracy to 96%. These findings affirm the robust capability of CNNs in training for face mask recognition, with the addition of the attention mechanism notably enhancing discriminative accuracy. Lastly, we delve into the model’s limitations and the potential challenges encountered in real-world implementations."
   },
   {
     "objectID": "Data-Sources.html",
@@ -67,7 +67,7 @@
     "href": "Reference.html",
     "title": "Reference",
     "section": "",
-    "text": "Coşkun, H., et al. (2021). The spread of COVID-19 virus through population density and wind in Turkey cities. Science of The Total Environment, 751, 141663. https://doi.org/10.1016/j.scitotenv.2020.141663\nSy, K. T., et al. (2021). Population density and basic reproductive number of COVID-19 across United States counties. PLoS One, 16(4), e0249271. https://doi.org/10.1371/journal.pone.0249271\nWong, D. W. S., & Li, Y. (2020). Spreading of COVID-19: Density matters. PLoS One, 15(12), e0242398. https://doi.org/10.1371/journal.pone.0242398\nYin, H., et al. (2021). Association between population density and infection rate suggests the importance of social distancing and travel restriction in reducing the COVID-19 pandemic. Environmental Science and Pollution Research International, 28(30), 40424-40430. https://doi.org/10.1007/s11356-021-12364-4\nThe BMJ. (2023). Public health impact of COVID-19 vaccines in the US: observational study. https://www.bmj.com/content/376/bmj-2021-068373\nScientific Reports. (2023). Impact of vaccination on the COVID-19 pandemic in U.S. states. https://www.nature.com/articles/s41598-022-05498-z\nPubMed. (2023). The effect of the COVID-19 vaccine on daily cases and deaths based on global vaccine data. https://pubmed.ncbi.nlm.nih.gov/34835259/"
+    "text": "Pann, V.; Lee, H.J. Effective Attention-Based Mechanism for Masked Face Recognition. Appl. Sci. 2022, 12, 5590. https://doi.org/10.3390/app12115590\nAlzu’bi, A.; Albalas, F.; AL-Hadhrami, T.; Younis, L.B.; Bashayreh, A. Masked Face Recognition Using Deep Learning: A Review. Electronics 2021, 10, 2666. https://doi.org/10.3390/electronics10212666\nWong, D. W. S., & Li, Y. (2020). Spreading of COVID-19: Density matters. PLoS One, 15(12), e0242398. https://doi.org/10.1371/journal.pone.0242398\nYin, H., et al. (2021). Association between population density and infection rate suggests the importance of social distancing and travel restriction in reducing the COVID-19 pandemic. Environmental Science and Pollution Research International, 28(30), 40424-40430. https://doi.org/10.1007/s11356-021-12364-4\nThe BMJ. (2023). Public health impact of COVID-19 vaccines in the US: observational study. https://www.bmj.com/content/376/bmj-2021-068373\nScientific Reports. (2023). Impact of vaccination on the COVID-19 pandemic in U.S. states. https://www.nature.com/articles/s41598-022-05498-z\nPubMed. (2023). The effect of the COVID-19 vaccine on daily cases and deaths based on global vaccine data. https://pubmed.ncbi.nlm.nih.gov/34835259/"
   },
   {
     "objectID": "Conclusion.html",
@@ -88,6 +88,27 @@
     "href": "Data-Sources.html#data-preprocessing",
     "title": "Data Sources",
     "section": "Data Preprocessing",
-    "text": "Data Preprocessing\nThe data set is divided in training, testing and validation directories."
+    "text": "Data Preprocessing\nThe data set is divided in training, testing and validation directories.\n\n\n\nTraining Example\n\n\n\n\n\nTesting Example\n\n\n\n\n\nValidation Example\n\n\nThe dataset employed in this study comprises facial headshots, which inherently simplifies the analytical process by minimizing extraneous background distractions. Nevertheless, the images exhibit variability in pixel count and dimensions, necessitating their standardization to a uniform resolution of 150x150 pixels to ensure consistency in the data processing and analysis."
+  },
+  {
+    "objectID": "index.html#related-work",
+    "href": "index.html#related-work",
+    "title": "Introduction",
+    "section": "Related Work",
+    "text": "Related Work\nConvolutional Neural Networks (CNNs) are effectively used for face mask recognition by leveraging their ability to process pixel data from images and learn hierarchical features. CNNs employ multiple layers of filters to extract features from an image. In the context of masked faces, these networks focus on extracting and learning the visible parts of the face, such as the eyes and forehead. This allows the model to recognize individuals even when lower facial features are obscured by masks, by adapting the training process to focus more on the unmasked regions of the face.\nRecent studies in face mask recognition using CNNs have introduced several advancements. Pann & Lee (2022) have pioneered an attention-based CNN model that employs a convolutional block attention module (CBAM), focusing on enhancing feature recognition particularly around the eye regions, which is critical in scenarios where masks obscure facial features. Concurrently, Zhang et al. (2021) present a development in lightweight CNN architectures aimed at real-time face mask detection, balancing computational efficiency with performance. These studies underscore a critical shift towards adapting facial recognition technologies to accommodate scenarios involving face coverings, highlighting both the innovative approach to feature enhancement and the pragmatic application in real-time environments."
+  },
+  {
+    "objectID": "Models.html",
+    "href": "Models.html",
+    "title": "CNN Models",
+    "section": "",
+    "text": "From 2019 to 2023, COVID-19 has profoundly impacted various facets of our lives, including education and communication. In response, the adoption of effective countermeasures to mitigate the spread of the virus has been imperative. Academic research supports the efficacy of facial masks in significantly reducing virus transmission, which has subsequently catalyzed the development of mask recognition systems. These systems predominantly utilize image recognition technologies to ascertain mask compliance among individuals."
+  },
+  {
+    "objectID": "Models.html#related-work",
+    "href": "Models.html#related-work",
+    "title": "CNN Models",
+    "section": "Related Work",
+    "text": "Related Work\nConvolutional Neural Networks (CNNs) are effectively used for face mask recognition by leveraging their ability to process pixel data from images and learn hierarchical features. CNNs employ multiple layers of filters to extract features from an image. In the context of masked faces, these networks focus on extracting and learning the visible parts of the face, such as the eyes and forehead. This allows the model to recognize individuals even when lower facial features are obscured by masks, by adapting the training process to focus more on the unmasked regions of the face.\nRecent studies in face mask recognition using CNNs have introduced several advancements. Pann & Lee (2022) have pioneered an attention-based CNN model that employs a convolutional block attention module (CBAM), focusing on enhancing feature recognition particularly around the eye regions, which is critical in scenarios where masks obscure facial features. Concurrently, Zhang et al. (2021) present a development in lightweight CNN architectures aimed at real-time face mask detection, balancing computational efficiency with performance. These studies underscore a critical shift towards adapting facial recognition technologies to accommodate scenarios involving face coverings, highlighting both the innovative approach to feature enhancement and the pragmatic application in real-time environments."
   }
 ]

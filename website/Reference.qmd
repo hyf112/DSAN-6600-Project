@@ -9,9 +9,9 @@ format:
     code-overflow: wrap
 ---
 
-- Coşkun, H., et al. (2021). The spread of COVID-19 virus through population density and wind in Turkey cities. Science of The Total Environment, 751, 141663. https://doi.org/10.1016/j.scitotenv.2020.141663
+- Pann, V.; Lee, H.J. Effective Attention-Based Mechanism for Masked Face Recognition. Appl. Sci. 2022, 12, 5590. https://doi.org/10.3390/app12115590
 
-- Sy, K. T., et al. (2021). Population density and basic reproductive number of COVID-19 across United States counties. PLoS One, 16(4), e0249271. https://doi.org/10.1371/journal.pone.0249271
+- Alzu’bi, A.; Albalas, F.; AL-Hadhrami, T.; Younis, L.B.; Bashayreh, A. Masked Face Recognition Using Deep Learning: A Review. Electronics 2021, 10, 2666. https://doi.org/10.3390/electronics10212666
 
 - Wong, D. W. S., & Li, Y. (2020). Spreading of COVID-19: Density matters. PLoS One, 15(12), e0242398. https://doi.org/10.1371/journal.pone.0242398
 

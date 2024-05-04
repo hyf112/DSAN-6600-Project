@@ -1,0 +1,20 @@
+---
+title: "CNN Models"
+format:
+  html:
+    page-layout: full
+    code-fold: show
+    code-copy: true
+    code-tools: true
+    code-overflow: wrap
+---
+
+From 2019 to 2023, COVID-19 has profoundly impacted various facets of our lives, including education and communication. In response, the adoption of effective countermeasures to mitigate the spread of the virus has been imperative. Academic research supports the efficacy of facial masks in significantly reducing virus transmission, which has subsequently catalyzed the development of mask recognition systems. These systems predominantly utilize image recognition technologies to ascertain mask compliance among individuals.
+
+![Wearing Masks Can Protect Us!](pictures/face_mask.png)
+
+## Related Work
+
+Convolutional Neural Networks (CNNs) are effectively used for face mask recognition by leveraging their ability to process pixel data from images and learn hierarchical features. CNNs employ multiple layers of filters to extract features from an image. In the context of masked faces, these networks focus on extracting and learning the visible parts of the face, such as the eyes and forehead. This allows the model to recognize individuals even when lower facial features are obscured by masks, by adapting the training process to focus more on the unmasked regions of the face.
+
+Recent studies in face mask recognition using CNNs have introduced several advancements. Pann & Lee (2022) have pioneered an attention-based CNN model that employs a convolutional block attention module (CBAM), focusing on enhancing feature recognition particularly around the eye regions, which is critical in scenarios where masks obscure facial features. Concurrently, Zhang et al. (2021) present a development in lightweight CNN architectures aimed at real-time face mask detection, balancing computational efficiency with performance. These studies underscore a critical shift towards adapting facial recognition technologies to accommodate scenarios involving face coverings, highlighting both the innovative approach to feature enhancement and the pragmatic application in real-time environments.

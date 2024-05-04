@@ -15,23 +15,15 @@ The dataset used in our study is [Face Mask Detection ~12K Images Dataset](https
 
 ![So Many Faces We Have!](pictures/dataset-cover.png)
 
-## Key Attributes
-
-| image_path                                                  | label      | location |
-|-------------------------------------------------------------|------------|----------|
-| input/Face Mask Dataset/Test/WithoutMask/2734.png           | WithoutMask| Test     |
-| input/Face Mask Dataset/Test/WithoutMask/4345.png           | WithoutMask| Test     |
-| input/Face Mask Dataset/Test/WithoutMask/4423.png           | WithoutMask| Test     |
-| input/Face Mask Dataset/Test/WithoutMask/2052.png           | WithoutMask| Test     |
-| input/Face Mask Dataset/Test/WithoutMask/3364.png           | WithoutMask| Test     |
-
 
 ## Data Preprocessing
 
 The data set is divided in training, testing and validation directories.
 
+![Training Example](pictures/sample3.png)
 
+![Testing Example](pictures/sample2.png)
 
-```{python, }
+![Validation Example](pictures/sample1.png)
 
-```
+The dataset employed in this study comprises facial headshots, which inherently simplifies the analytical process by minimizing extraneous background distractions. Nevertheless, the images exhibit variability in pixel count and dimensions, necessitating their standardization to a uniform resolution of 150x150 pixels to ensure consistency in the data processing and analysis.

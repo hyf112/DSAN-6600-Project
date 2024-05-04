@@ -10,6 +10,8 @@ website:
         text: Introduction
       - href: Data-Sources.qmd
         text: Data Sources
+      - href: Models.qmd
+        text: Models
       - href: Conclusion.qmd
         text: Conclusion
       - href: Reference.qmd
