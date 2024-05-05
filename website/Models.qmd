@@ -1,5 +1,5 @@
 ---
-title: "CNN Models"
+title: "Models"
 format:
   html:
     page-layout: full
@@ -9,12 +9,83 @@ format:
     code-overflow: wrap
 ---
 
-From 2019 to 2023, COVID-19 has profoundly impacted various facets of our lives, including education and communication. In response, the adoption of effective countermeasures to mitigate the spread of the virus has been imperative. Academic research supports the efficacy of facial masks in significantly reducing virus transmission, which has subsequently catalyzed the development of mask recognition systems. These systems predominantly utilize image recognition technologies to ascertain mask compliance among individuals.
+## Convolutional Neural Networks Model
 
-![Wearing Masks Can Protect Us!](pictures/face_mask.png)
+We developed our model using a convolutional neural network architecture, starting with a convolutional layer of 64 filters followed by max pooling and batch normalization. This initial setup is complemented by successive convolutional layers with 128 and 256 filters respectively, each followed by max pooling and batch normalization to enhance the model's learning capability. Regularization is achieved through dropout at a rate of 0.25 after each convolutional block to prevent overfitting. The network concludes with a fully connected layer of 256 neurons, employing a ReLU activation function, and a dropout rate of 0.5 to further enforce regularization. The output layer consists of a single neuron with a sigmoid activation function, making the model suitable for binary classification tasks. The model utilizes the Adam optimizer and is trained with a binary cross-entropy loss function, focusing on binary accuracy as the performance metric.
 
-## Related Work
+### Training Process
 
-Convolutional Neural Networks (CNNs) are effectively used for face mask recognition by leveraging their ability to process pixel data from images and learn hierarchical features. CNNs employ multiple layers of filters to extract features from an image. In the context of masked faces, these networks focus on extracting and learning the visible parts of the face, such as the eyes and forehead. This allows the model to recognize individuals even when lower facial features are obscured by masks, by adapting the training process to focus more on the unmasked regions of the face.
+::: panel-tabset
 
-Recent studies in face mask recognition using CNNs have introduced several advancements. Pann & Lee (2022) have pioneered an attention-based CNN model that employs a convolutional block attention module (CBAM), focusing on enhancing feature recognition particularly around the eye regions, which is critical in scenarios where masks obscure facial features. Concurrently, Zhang et al. (2021) present a development in lightweight CNN architectures aimed at real-time face mask detection, balancing computational efficiency with performance. These studies underscore a critical shift towards adapting facial recognition technologies to accommodate scenarios involving face coverings, highlighting both the innovative approach to feature enhancement and the pragmatic application in real-time environments.
+#### Accuracy
+
+![Figure 1-1: This figure shows the training and validation accuracy of the model across epochs. Initially, the training accuracy starts high and remains quite stable, showing little improvement over time, which suggests the model quickly reached a good performance level on the training data. In contrast, the validation accuracy starts much lower, indicating initial underperformance on unseen data, but it significantly improves by the second epoch and then stabilizes, closely mirroring the training accuracy by the fifth epoch. This could suggest that the model, after some adjustments, is generalizing well without overfitting or underfitting.](pictures/result1.png)
+
+#### Loss
+
+![Figure 1-2: This figure shows the training and validation loss over the epochs. The training loss starts lower and decreases steadily, reflecting the model’s learning progress on the training data. The validation loss starts very high, indicating poor initial performance on the validation set, but it sharply decreases and eventually stabilizes, though with some fluctuation. This reduction in validation loss alongside a stable, low training loss suggests that the model is becoming more effective and consistent in its predictions as it trains.](pictures/result2.png)
+
+:::
+
+### Testing Results
+
+The model's accuracy on the testing dataset is 91.63%. This high level of accuracy suggests that the model is performing well on the given task.
+
+![Figure 2: This figure shows that the model has a high rate of correct predictions for both classes, with a particularly low number of false positives, indicating strong performance in distinguishing class 1. However, there are more false negatives for class 0, which could be an area for improvement in model accuracy.](pictures/cm1.png)
+
+
+## CNN Model with Attention Mechanism
+
+We integrated two types of attention mechanisms into the Convolutional Neural Network (CNN) model:
+
+1. Channel Attention Mechanism:
+
+The ChannelAttention layer works by focusing on the 'what' of the input data, which means it helps the model pay more attention to the most informative features across the channel dimension. This layer performs the following steps:
+
+- Average Pooling and Max Pooling: These operations are applied to the input tensor along the spatial dimensions (width and height), resulting in two different context descriptors: one for the average and one for the maximum values.
+- Shared Dense Layers: Two shared dense layers transform these context descriptors. The first dense layer with a relu activation reduces dimensionality by a factor defined by ratio, which controls the trade-off between complexity and performance. The second dense layer restores the dimensions.
+- Activation Function: The outputs of the dense layers from the average-pooled and max-pooled paths are added and passed through a sigmoid activation function to produce a scaling factor between 0 and 1.
+
+These steps generate a channel-wise attention map which is then multiplied by the original input tensor to scale the channel features by their importance.
+
+2. Spatial Attention Mechanism:
+
+The SpatialAttention layer, on the other hand, focuses on the 'where' of the input data, directing the model's focus to important spatial locations:
+
+- Pooling Operations: Average and max pooling operations are applied along the channel axis to produce two separate feature maps, highlighting where significant activations occur across all channels.
+- Concatenation and Convolution: The feature maps are concatenated and passed through a convolutional layer with a single filter and a sigmoid activation. This filter generates a spatial attention map, which is learned based on the concatenated contexts of average and max signals.
+
+The spatial attention map emphasizes specific areas in the input tensor, enabling the model to focus more on salient parts of the image.
+
+Both attention mechanisms are integrated after batch normalization and before the dropout layer in each convolutional block of the model. This placement ensures that the attention modules can refine the feature representation post-normalization and before any feature dropout occurs, maintaining the focus on important features throughout the training. By implementing these attention layers, the CNN model becomes more adaptive and focused, improving its ability to recognize patterns, especially in complex visual tasks such as recognizing faces with masks. The attention mechanisms can help mitigate issues like the variance in mask types, positions, and the occlusion they cause by directing the model to focus more on the visible, unoccluded parts of the face.
+
+### Training Process
+
+::: panel-tabset
+
+#### Accuracy
+
+![Figure 3-1: This figure shows the training and validation accuracy of the model across six epochs after integrating the attention mechanism. The training accuracy begins high and remains consistent, suggesting the model achieves strong performance on the training data early. The validation accuracy initially shows underperformance but improves dramatically around the third epoch, leveling out to closely match the training accuracy by the sixth epoch. This stability in both training and validation accuracy suggests effective generalization and indicates that the model is well-tuned to the complexities of the task without overfitting.](pictures/result3.png)
+
+#### Loss
+
+![Figure 3-2: This figure shows the training and validation loss over six epochs. The training loss decreases rapidly and stabilizes at a low level from the third epoch onward, which is indicative of effective learning. The validation loss, although starting higher, mirrors this trend by the third epoch and closely follows the training loss, showing a reduction to a similar low level. This convergence of training and validation losses at low values signifies that the model, enhanced with attention mechanisms, is consistent and robust against overfitting.](pictures/result4.png)
+
+:::
+
+Comparing these results with the previous plots without the attention mechanism, it is evident that the introduction of attention layers has improved the model’s ability to generalize as shown by the reduced gap between training and validation accuracy and loss. Previously, there were significant drops and spikes in validation accuracy and loss, suggesting potential issues with model stability and generalization. With the attention mechanism, these issues seem to have been mitigated, leading to a more stable and reliable model performance across epochs. This improvement likely results from the model's enhanced capability to focus on the most informative features, reducing the noise and the effects of irrelevant data variations during training.
+
+### Testing Results
+
+The accuracy on the testing data for the CNN model with the attention mechanism is 96.37%, showing a significant improvement over the previous accuracy of 91.63%. This enhancement can be attributed both to the incorporation of the attention mechanism and the observed changes in the confusion matrix.
+
+![Figure 4: This figure represents a confusion matrix for the CNN model enhanced with an attention mechanism, showing the number of correct and incorrect predictions for two classes (0 and 1) after testing.](pictures/cm2.png)
+
+Comparing this confusion matrix to the previous one without the attention mechanism, there is a notable improvement in both the false negatives and false positives rates. Previously, the model had a higher number of false negatives for class 0 (82 instances) and only one false positive. In the updated model with attention mechanisms, the number of false negatives dramatically decreased to 3, significantly improving the sensitivity of the model towards class 0. The false positives slightly increased from 1 to 33, indicating a slight trade-off where the model has become more cautious about incorrectly classifying class 1 but at the cost of occasionally misclassifying class 0 as class 1.
+
+This enhanced confusion matrix suggests that the attention mechanism has successfully increased the model's ability to focus on more discriminative features for both classes, thereby reducing the overall error rates and specifically the rate at which the model misses class 0 instances. However, the increase in false positives indicates that while the model is less likely to miss class 0 instances, it might be overcompensating, leading to more class 1 instances being incorrectly classified as class 0. This could be an area for further refinement in balancing the sensitivity and specificity of the model.
+
+
+## Summary
+
+Overall, the results indicate that the CNN model with attention mechanism is a well-balanced model that is both more sensitive and just slightly less specific, resulting in higher overall accuracy and improved performance on the testing dataset. This makes the model more reliable for practical applications, where high accuracy is critical.

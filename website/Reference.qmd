@@ -13,12 +13,6 @@ format:
 
 - Alzu’bi, A.; Albalas, F.; AL-Hadhrami, T.; Younis, L.B.; Bashayreh, A. Masked Face Recognition Using Deep Learning: A Review. Electronics 2021, 10, 2666. https://doi.org/10.3390/electronics10212666
 
-- Wong, D. W. S., & Li, Y. (2020). Spreading of COVID-19: Density matters. PLoS One, 15(12), e0242398. https://doi.org/10.1371/journal.pone.0242398
+- https://www.kaggle.com/code/egbeolajohn/facewmask-detection-with-98-5-accuracy/notebook?scriptVersionId=93916875
 
-- Yin, H., et al. (2021). Association between population density and infection rate suggests the importance of social distancing and travel restriction in reducing the COVID-19 pandemic. Environmental Science and Pollution Research International, 28(30), 40424-40430. https://doi.org/10.1007/s11356-021-12364-4
-
-- The BMJ. (2023). Public health impact of COVID-19 vaccines in the US: observational study. https://www.bmj.com/content/376/bmj-2021-068373
-
-- Scientific Reports. (2023). Impact of vaccination on the COVID-19 pandemic in U.S. states. https://www.nature.com/articles/s41598-022-05498-z
-
-- PubMed. (2023). The effect of the COVID-19 vaccine on daily cases and deaths based on global vaccine data. https://pubmed.ncbi.nlm.nih.gov/34835259/
+- https://www.kaggle.com/datasets/ashishjangra27/face-mask-12k-images-dataset/data
